@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import About from "./About";
-import Skills from "./Skills";
-import Projects from "./Projects";
-import Contact from "./Contact";
-import Bonus from "./Bonus";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Bonus from "./components/Bonus";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,9 +13,8 @@ const useStyles = makeStyles((theme) => ({
   },
   displayWindow: {
     width: "100%",
-    height: "97%",
-    margin: "2%",
-    padding: "1%",
+    height: "95%",
+    margin: "1%",
     border: "1px solid white",
   },
 }));

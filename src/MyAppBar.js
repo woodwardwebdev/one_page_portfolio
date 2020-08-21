@@ -56,7 +56,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function MyAppBar(props) {
-  const { chooseContent } = props;
   const classes = useStyles();
   const [drawerOpen, setdrawerOpen] = React.useState(false);
 
