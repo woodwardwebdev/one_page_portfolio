@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import mugshot from "../img/mugshot.jpg";
@@ -40,14 +39,14 @@ export default function About() {
   return (
     <Container className={classes.window}>
       <Grid container spacing={2}>
-        <Grid item sm={12} md={6} className={classes.gridBox}>
+        <Grid item sm={12} md={5} className={classes.gridBox}>
           <img
             className={classes.photo}
             src={mugshot}
             alt="Colin Woodward"
           ></img>
         </Grid>
-        <Grid item sm={12} md={6} className={classes.gridBox2}>
+        <Grid item sm={12} md={7} className={classes.gridBox2}>
           <Typography variant="h3">Hi, I'm Colin.</Typography>
           <Typography variant="h6">
             Web developer, sound engineer and all-round tech enthusiast.

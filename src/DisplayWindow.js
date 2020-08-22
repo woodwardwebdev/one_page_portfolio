@@ -13,9 +13,10 @@ const useStyles = makeStyles((theme) => ({
   },
   displayWindow: {
     width: "100%",
-    height: "95%",
     margin: "1%",
-    border: "1px solid white",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 }));
 

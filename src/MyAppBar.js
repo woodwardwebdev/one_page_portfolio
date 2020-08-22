@@ -75,7 +75,7 @@ export default function MyAppBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={classes.myBar}>
+      <AppBar position="sticky" className={classes.myBar}>
         <Toolbar>
           <IconButton
             edge="start"

@@ -2,6 +2,13 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.fullscreen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .wire {
@@ -9,14 +16,8 @@ body {
 }
 
 .page {
-  height: 93vh;
+  height: 100%;
   display: flex;
-}
-
-.header {
-  height: 7vh;
-  width: 100%;
-  top: 0;
 }
 
 .side-menu {
@@ -31,5 +32,5 @@ body {
 }
 
 .white {
-  background-color: white;
+  background-color: rgb(18, 18, 18);
 }

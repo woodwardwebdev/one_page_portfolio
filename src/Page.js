@@ -4,9 +4,9 @@ import MyAppBar from "./MyAppBar";
 
 export default function Page() {
   return (
-    <div>
+    <div className="fullscreen">
       <MyAppBar />
-      <div className="page">
+      <div class="page">
         <DisplayWindow />
       </div>
     </div>
