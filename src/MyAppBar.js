@@ -42,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "0.3rem",
     fontSize: "1.6rem",
     color: "rgba(255,255,255,0.9)",
+    "&:hover": {
+      textShadow: "20px 20px 20px #fff",
+    },
   },
   drawerPaper: {
     marginTop: "7vh",
