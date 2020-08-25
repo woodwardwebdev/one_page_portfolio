@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
   displayWindow: {
     width: "100%",
+    height: "98%",
     margin: "1%",
     display: "flex",
     justifyContent: "center",
@@ -20,18 +21,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function DisplayWindow(props) {
+function DisplayWindow({ location }) {
   const classes = useStyles();
   return (
-    <div className={classes.displayWindow}>
-      <Switch>
-        <Route path="/" component={About} exact />
-        <Route path="/about" component={About} />
-        <Route path="/skills" component={Skills} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/bonus" component={Bonus} />
-      </Switch>
-    </div>
+    <React.Fragment>
+      <div className={classes.displayWindow}>
+        <Switch>
+          <Route path="/" component={About} exact />
+          <Route path="/about" component={About} />
+          <Route path="/skills" component={Skills} />
+          <Route path="/projects" component={Projects} exact />
+          <Route path="/contact" component={Contact} />
+          <Route path="/bonus" component={Bonus} />
+        </Switch>
+      </div>
+    </React.Fragment>
   );
 }
+
+export default withRouter(DisplayWindow);

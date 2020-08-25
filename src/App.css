@@ -18,6 +18,8 @@ body {
 .page {
   height: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .side-menu {
@@ -29,8 +31,16 @@ body {
   height: 100%;
   width: 100%;
   padding: 2%;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .white {
-  background-color: rgb(18, 18, 18);
+  background-color: rgb(35, 255, 64);
+}
+.route-wrapper {
+  position: relative;
+}
+
+.route-wrapper > div {
+  position: absolute;
 }

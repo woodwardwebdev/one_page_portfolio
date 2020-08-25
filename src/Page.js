@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <div className="fullscreen">
       <MyAppBar />
-      <div class="page">
+      <div className="page">
         <DisplayWindow />
       </div>
     </div>

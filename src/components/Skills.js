@@ -1,7 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
@@ -172,6 +170,7 @@ export default function Skills() {
                   <a
                     className={classes.accordianLink}
                     href="http://www.github.com/woodwardwebdev"
+                    target="blank"
                   >
                     clicking here
                   </a>{" "}

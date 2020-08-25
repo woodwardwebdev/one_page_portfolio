@@ -8,13 +8,13 @@ import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    // flexGrow: 1,
   },
   window: {
     height: "100%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+  },
+  gridContainer: {
+    padding: "10%",
   },
   gridBox: {
     display: "flex",
@@ -38,7 +38,7 @@ export default function About() {
   const classes = useStyles();
   return (
     <Container className={classes.window}>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} className={classes.gridContainer}>
         <Grid item sm={12} md={5} className={classes.gridBox}>
           <img
             className={classes.photo}
