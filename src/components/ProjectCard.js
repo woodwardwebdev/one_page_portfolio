@@ -7,6 +7,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import Carousel from "react-material-ui-carousel";
 
 const useStyles = makeStyles({
   root: {
@@ -32,8 +33,10 @@ const useStyles = makeStyles({
     borderRadius: "10px 10px 0 0",
     height: "300px",
     objectFit: "cover",
-    objectPosition: "0 0",
-    boxShadow: "1px 1px 10px rgba(0,0,0,0.5)",
+    alignItems: "center",
+    justifyContent: "center",
+    // objectPosition: "0 0",
+    // boxShadow: "1px 1px 10px rgba(0,0,0,0.5)",
   },
   mediaMobile: {
     borderRadius: "10px",
@@ -45,6 +48,13 @@ const useStyles = makeStyles({
   gridHeader: {
     marginBottom: "-1.8rem",
   },
+  carousel: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  carouselImg: { height: "300px" },
   buttons: {
     justifyContent: "center",
   },
@@ -80,6 +90,7 @@ export default function ProjectCard(props) {
   const {
     title,
     img,
+    moreImgs,
     gitLink,
     liveLink,
     descText,
@@ -99,10 +110,16 @@ export default function ProjectCard(props) {
         </Typography>
         <CardMedia
           className={isDesktop ? classes.mediaDesktop : classes.mediaMobile}
-          image={img}
+          // image={img}
           title={title}
-          component="img"
-        />
+          // component="img"
+        >
+          <Carousel className={classes.carousel} navButtonsAlwaysVisible={true}>
+            {moreImgs.map((img) => (
+              <img className={classes.carouselImg} src={img} alt="" />
+            ))}
+          </Carousel>
+        </CardMedia>
 
         <Grid container spacing={5} className={classes.cardDescription}>
           <Grid item xs={12} sm={6} className={classes.order1}>

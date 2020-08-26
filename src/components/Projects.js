@@ -86,6 +86,7 @@ export default function Projects() {
     setModalContent({
       title: tile.title,
       img: tile.img,
+      moreImgs: tile.moreImgs,
       gitLink: tile.gitLink,
       liveLink: tile.liveLink,
       descText: tile.descText,

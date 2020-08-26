@@ -4,10 +4,19 @@ import mileage from "../img/project_imgs/hero/mileage.png";
 import movies from "../img/project_imgs/hero/movies.png";
 import opinionrated from "../img/project_imgs/hero/opinionrated.png";
 import shopping from "../img/project_imgs/hero/shopping.png";
+import {
+  colorsImgs,
+  discordImgs,
+  mileageImgs,
+  moviesImgs,
+  opinionratedImgs,
+  shoppingImgs,
+} from "../content/projectsImgs";
 
 const projectsData = [
   {
     img: colors,
+    moreImgs: colorsImgs,
     title: "Color Picker App",
     author: "Colin Woodward",
     cols: 1,
@@ -24,6 +33,7 @@ const projectsData = [
   },
   {
     img: discord,
+    moreImgs: discordImgs,
     title: "Discord Bot",
     author: "Colin Woodward",
     cols: 1,
@@ -38,6 +48,7 @@ const projectsData = [
   },
   {
     img: mileage,
+    moreImgs: mileageImgs,
     title: "Mileage Tracker With Google API",
     author: "Colin Woodward",
     cols: 1,
@@ -54,6 +65,7 @@ const projectsData = [
   },
   {
     img: movies,
+    moreImgs: moviesImgs,
     title: "Movie Search using API",
     author: "Colin Woodward",
     cols: 1,
@@ -69,6 +81,7 @@ const projectsData = [
   },
   {
     img: opinionrated,
+    moreImgs: opinionratedImgs,
     title: "Opinionrated! - A question and answer voting app",
     author: "Colin Woodward",
     cols: 1,
@@ -80,6 +93,7 @@ const projectsData = [
   },
   {
     img: shopping,
+    moreImgs: shoppingImgs,
     title: "Shopping List",
     author: "Colin Woodward",
     cols: 1,
