@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -34,8 +34,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function About() {
+export default function About(props) {
   const classes = useStyles();
+  const { isBig, isMed, isSmall } = props.media;
+  const { changeLocation } = props;
+  useEffect(() => {
+    changeLocation(props.location.pathname);
+  });
   return (
     <Container className={classes.window}>
       <Grid container spacing={2} className={classes.gridContainer}>

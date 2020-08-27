@@ -61,9 +61,14 @@ const useStyles = makeStyles((theme) => ({
 export default function MyAppBar(props) {
   const classes = useStyles();
   const [drawerOpen, setdrawerOpen] = React.useState(false);
+  const { location } = props;
 
   const toggleDrawer = () => {
     setdrawerOpen(!drawerOpen);
+  };
+
+  const handleChangeLocation = (newLocation) => {
+    toggleDrawer();
   };
 
   const isDesktop = useMediaQuery("(min-width:800px)");
@@ -102,7 +107,11 @@ export default function MyAppBar(props) {
                   className={classes.drawerLink}
                   key={index}
                 >
-                  <ListItem button key={item.name} onClick={toggleDrawer}>
+                  <ListItem
+                    button
+                    key={item.name}
+                    onClick={() => handleChangeLocation(item.display)}
+                  >
                     <ListItemIcon>{item.icon}</ListItemIcon>
                     <ListItemText primary={item.display} />
                   </ListItem>
@@ -111,7 +120,7 @@ export default function MyAppBar(props) {
             </List>
           </Drawer>
           <Typography variant="h6" className={classes.title} noWrap={true}>
-            Colin Woodward
+            Colin Woodward - {location}
           </Typography>
           <a
             className={classes.navLink}

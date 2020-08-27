@@ -1,6 +1,6 @@
 import scones from "../img/recipe_imgs/fruit_scones.jpg";
 import spaghetti from "../img/recipe_imgs/spaghetti_carbonara.jpg";
-import gnocchi from "../img/recipe_imgs/tomato_gnocchi.jpg";
+import gnocchi from "../img/recipe_imgs/tomato_gnocchi.JPG";
 
 const recipeData = [
   {
@@ -18,7 +18,7 @@ const recipeData = [
       { ingredient: "Vanilla Extract", amount: "1tsp" },
     ],
     desc:
-      "These scones are light as anything and great with cream and jam. This recipe makes around 8 scones.",
+      "These are light as anything and great with cream and jam. This recipe makes around 8 scones.",
     method: [
       "Preheat your oven to 200 degrees celcius and place a baking sheet in it to get really hot",
       "Combine the flour, baking powder, sugar and salt in a bowl",
@@ -77,8 +77,9 @@ const recipeData = [
       },
       { ingredient: "Gnocchi", amount: "175g" },
       {
-        ingredient: "Cheese - to serve",
-        amount: "You alone know how much cheese the day you've had deserves",
+        ingredient: "Cheese to serve",
+        amount:
+          "Only you know how much cheese you deserve after the day you've had",
       },
     ],
     desc:

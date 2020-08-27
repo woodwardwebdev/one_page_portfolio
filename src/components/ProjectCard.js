@@ -54,7 +54,7 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "center",
   },
-  carouselImg: { height: "300px" },
+  carouselImg: { height: "300px", borderRadius: "8px" },
   buttons: {
     justifyContent: "center",
   },
@@ -114,7 +114,11 @@ export default function ProjectCard(props) {
           title={title}
           // component="img"
         >
-          <Carousel className={classes.carousel} navButtonsAlwaysVisible={true}>
+          <Carousel
+            className={classes.carousel}
+            navButtonsAlwaysVisible={moreImgs.length < 2 ? false : true}
+            indicators={false}
+          >
             {moreImgs.map((img) => (
               <img className={classes.carouselImg} src={img} alt="" />
             ))}

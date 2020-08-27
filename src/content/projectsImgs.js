@@ -11,6 +11,7 @@ import mileage3 from "../img/project_imgs/mileage/3.png";
 
 import movies1 from "../img/project_imgs/movies/1.png";
 import movies2 from "../img/project_imgs/movies/2.png";
+import movies3 from "../img/project_imgs/movies/3.png";
 
 import opinionrated1 from "../img/project_imgs/opinionrated/1.png";
 import opinionrated2 from "../img/project_imgs/opinionrated/2.png";
@@ -22,7 +23,7 @@ import shopping3 from "../img/project_imgs/shopping/3.png";
 const colorsImgs = [colors1, colors2, colors3, colors4];
 const discordImgs = [discord1];
 const mileageImgs = [mileage1, mileage2, mileage3];
-const moviesImgs = [movies1, movies2];
+const moviesImgs = [movies1, movies2, movies3];
 const opinionratedImgs = [opinionrated1, opinionrated2];
 const shoppingImgs = [shopping1, shopping2, shopping3];
 

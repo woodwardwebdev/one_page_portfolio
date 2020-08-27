@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import projectsData from "../content/projectsData";
@@ -74,13 +74,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Projects() {
+export default function Projects(props) {
   const classes = useStyles();
+  const { changeLocation } = props;
   const [modalOpen, setModalOpen] = React.useState(false);
   const [modalContent, setModalContent] = React.useState({});
-  const isBig = useMediaQuery("(min-width:900px)");
-  const isMed = useMediaQuery("(min-width:600px)");
-  const isSmall = useMediaQuery("(max-width:599px");
+  const { isBig, isMed, isSmall } = props.media;
 
   const toggleOpen = (tile) => {
     setModalContent({
@@ -96,6 +95,10 @@ export default function Projects() {
       setModalOpen(!modalOpen);
     }
   };
+
+  useEffect(() => {
+    changeLocation(props.location.pathname);
+  });
 
   return (
     <div className={classes.projectsPage}>

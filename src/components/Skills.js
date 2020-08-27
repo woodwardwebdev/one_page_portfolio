@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Accordion from "@material-ui/core/Accordion";
@@ -28,8 +28,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Skills() {
+export default function Skills(props) {
   const classes = useStyles();
+  const { isBig, isMed, isSmall } = props.media;
+  const { changeLocation } = props;
+  useEffect(() => {
+    changeLocation(props.location.pathname);
+  });
   return (
     <div className={classes.root}>
       <Box mb={3}>
