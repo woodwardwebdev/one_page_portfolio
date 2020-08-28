@@ -6,6 +6,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Bonus from "./components/Bonus";
+import MobileProjectView from "./components/MobileProjectView";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,6 +53,17 @@ function DisplayWindow(props) {
             exact
             render={(props) => (
               <Projects
+                {...props}
+                changeLocation={changeLocation}
+                media={media}
+              />
+            )}
+          />
+          <Route
+            path="/projects/:project"
+            exact
+            render={(props) => (
+              <MobileProjectView
                 {...props}
                 changeLocation={changeLocation}
                 media={media}

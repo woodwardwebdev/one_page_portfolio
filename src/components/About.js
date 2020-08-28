@@ -28,6 +28,8 @@ const useStyles = makeStyles((theme) => ({
   },
   divider: {
     margin: "1rem 0 1rem 0",
+    backgroundColor: "rgba(35, 255, 64, 0.4)",
+    boxShadow: "0px 0px 5px rgba(35,255,64,0.3)",
   },
   paragraph: {
     marginTop: "1rem",

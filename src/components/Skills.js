@@ -16,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
   },
+  accordianSummary: {
+    "&:hover $accordianSummaryIcon": { color: theme.palette.primary[500] },
+  },
+  accordianSummaryIcon: {},
   accordionListItem: {
     marginBottom: "1rem",
   },
@@ -45,9 +49,12 @@ export default function Skills(props) {
 
       <Accordion>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={
+            <ExpandMoreIcon className={classes.accordianSummaryIcon} />
+          }
           aria-controls="panelFrontend"
           id="panelFrontend"
+          className={classes.accordianSummary}
         >
           <Typography className={classes.heading}>Frontend</Typography>
         </AccordionSummary>
@@ -100,9 +107,12 @@ export default function Skills(props) {
       </Accordion>
       <Accordion>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={
+            <ExpandMoreIcon className={classes.accordianSummaryIcon} />
+          }
           aria-controls="panelBackend"
           id="panelbackend"
+          className={classes.accordianSummary}
         >
           <Typography className={classes.heading}>Backend</Typography>
         </AccordionSummary>
@@ -157,9 +167,12 @@ export default function Skills(props) {
       </Accordion>
       <Accordion>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={
+            <ExpandMoreIcon className={classes.accordianSummaryIcon} />
+          }
           aria-controls="panelSkills"
           id="panelSkills"
+          className={classes.accordianSummary}
         >
           <Typography className={classes.heading}>Key Skills</Typography>
         </AccordionSummary>

@@ -4,11 +4,11 @@ import MyAppBar from "./MyAppBar";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const displayNames = {
-  about: "About",
-  skills: "Skills",
-  projects: "Projects",
-  contact: "Contact",
-  bonus: "Bonus Recipes",
+  about: "- About",
+  skills: "- Skills",
+  projects: "- Projects",
+  contact: "- Contact",
+  bonus: "- Bonus Recipes",
 };
 
 export default function Page() {
@@ -19,7 +19,7 @@ export default function Page() {
   const media = { isBig, isMed, isSmall };
   const changeLocation = (newLocation) => {
     const loc = newLocation.substring(1);
-    setLocation(displayNames[loc]);
+    setLocation(displayNames[loc] || "- Projects");
   };
   return (
     <div className="fullscreen">

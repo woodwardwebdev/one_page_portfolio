@@ -85,6 +85,7 @@ export default function Projects(props) {
     setModalContent({
       title: tile.title,
       img: tile.img,
+      slug: tile.slug,
       moreImgs: tile.moreImgs,
       gitLink: tile.gitLink,
       liveLink: tile.liveLink,
@@ -93,6 +94,9 @@ export default function Projects(props) {
     });
     if (!isSmall) {
       setModalOpen(!modalOpen);
+    }
+    if (isSmall) {
+      props.history.push(`/projects/${tile.slug}`);
     }
   };
 
@@ -105,9 +109,9 @@ export default function Projects(props) {
       <Container className={classes.titles}>
         <Typography variant="h5">
           Questions?{" "}
-          <Link to="/contact" className={classes.greenLink}>
-            {`> Get in Touch <`}
-          </Link>
+          {/* <Link to="/contact" className={classes.greenLink}>
+            Click Me
+          </Link> */}
         </Typography>
       </Container>
       <Container className={classes.gridContainer}>
@@ -122,7 +126,7 @@ export default function Projects(props) {
               key={tile.img}
               cols={tile.cols || 1}
               classes={{ tile: classes.roundTile }}
-              onClick={!isSmall ? () => toggleOpen(tile) : null}
+              onClick={() => toggleOpen(tile)}
             >
               <img
                 src={tile.img}
@@ -132,7 +136,7 @@ export default function Projects(props) {
               <GridListTileBar
                 title={tile.title}
                 className={classes.tileBar}
-                titlePosition={isSmall ? "top" : "bottom"}
+                titlePosition={"bottom"}
               />
             </GridListTile>
           ))}
@@ -150,12 +154,7 @@ export default function Projects(props) {
                 isDesktop={isSmall ? false : true}
               />
             }
-          >
-            {/* <ProjectCard
-              project={modalContent}
-              isDesktop={isSmall ? false : true}
-            /> */}
-          </Modal>
+          ></Modal>
         ) : null}
       </Container>
     </div>

@@ -130,7 +130,7 @@ export default function MyAppBar(props) {
             </List>
           </Drawer>
           <Typography variant="h6" className={classes.title} noWrap={true}>
-            Colin Woodward - {location}
+            Colin Woodward {location}
           </Typography>
           <a
             className={classes.navLink}
