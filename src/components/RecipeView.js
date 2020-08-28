@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   bold: { fontWeight: "bold" },
 
   recipeGrid: {
-    width: "90%",
+    width: "100%",
     margin: "2rem",
     backgroundColor: "rgba(255,255,255,8%)",
     padding: "2rem",
@@ -61,7 +61,8 @@ const useStyles = makeStyles((theme) => ({
     color: "rgba(255,255,255,0.5)",
   },
   breadcrumbActive: {
-    color: "rgb(35, 255, 64)",
+    // color: "rgb(35, 255, 64)",
+    color: theme.palette.primary[500],
   },
   divider: { margin: "20px 0" },
 }));
@@ -79,26 +80,30 @@ export default function RecipeView(props) {
         <Typography variant="h6" align="center">
           I love to cook in my spare time. Here's some of my favourites
         </Typography>
-        <Grid
-          item
-          xs={12}
-          className={classes.recipeSelector}
-          direction={isBig ? "row" : "column"}
-          container
-        >
-          {recipeData.map((r, key) => (
-            <Button
-              key={key}
-              onClick={() => chooseRecipe(key)}
-              className={clsx(
-                key === recipe ? classes.breadcrumbActive : classes.breadcrumb,
-                classes.button
-              )}
-            >
-              <Typography variant="body1">{r.title}</Typography>
-            </Button>
-          ))}
-        </Grid>
+        <Container>
+          <Grid
+            item
+            xs={12}
+            className={classes.recipeSelector}
+            direction={isBig ? "row" : "column"}
+            container
+          >
+            {recipeData.map((r, key) => (
+              <Button
+                key={key}
+                onClick={() => chooseRecipe(key)}
+                className={clsx(
+                  key === recipe
+                    ? classes.breadcrumbActive
+                    : classes.breadcrumb,
+                  classes.button
+                )}
+              >
+                <Typography variant="body1">{r.title}</Typography>
+              </Button>
+            ))}
+          </Grid>
+        </Container>
       </Grid>
       <Grid container spacing={2} className={classes.recipeGrid}>
         <Grid item sm={12} md={5} className={classes.recipeIngredients}>

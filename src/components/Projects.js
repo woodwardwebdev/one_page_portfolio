@@ -20,10 +20,11 @@ const useStyles = makeStyles((theme) => ({
   },
   projectsPage: {
     height: "100%",
+    width: "90%",
   },
   titles: {
     textAlign: "center",
-    margin: "1.5rem",
+    margin: "1.5rem auto",
     marginBottom: "2rem",
   },
   greenLink: {
@@ -35,9 +36,8 @@ const useStyles = makeStyles((theme) => ({
   },
   gridContainer: {
     display: "flex",
-    flexDirection: "column",
-    // height: "100%",
-    padding: "3%",
+    justifyContent: "center",
+    padding: "1.5%",
     backgroundColor: "rgba(255,255,255,8%)",
     borderRadius: "20px",
     marginBottom: "2%",
@@ -106,7 +106,7 @@ export default function Projects(props) {
         <Typography variant="h5">
           Questions?{" "}
           <Link to="/contact" className={classes.greenLink}>
-            Get in Touch
+            {`> Get in Touch <`}
           </Link>
         </Typography>
       </Container>
@@ -122,7 +122,7 @@ export default function Projects(props) {
               key={tile.img}
               cols={tile.cols || 1}
               classes={{ tile: classes.roundTile }}
-              onClick={() => toggleOpen(tile)}
+              onClick={!isSmall ? () => toggleOpen(tile) : null}
             >
               <img
                 src={tile.img}

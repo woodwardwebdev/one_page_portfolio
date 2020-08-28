@@ -6,7 +6,6 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Bonus from "./components/Bonus";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,11 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 function DisplayWindow(props) {
   const classes = useStyles();
-  const { changeLocation } = props;
-  const isBig = useMediaQuery("(min-width:900px)");
-  const isMed = useMediaQuery("(min-width:600px)");
-  const isSmall = useMediaQuery("(max-width:599px");
-  const media = { isBig, isMed, isSmall };
+  const { changeLocation, media } = props;
   return (
     <React.Fragment>
       <div className={classes.displayWindow}>

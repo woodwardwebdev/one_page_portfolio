@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Textfield from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 
 const useStyles = makeStyles((theme) => ({
   root: { display: "flex", flexDirection: "column" },
@@ -13,19 +13,38 @@ const useStyles = makeStyles((theme) => ({
     width: "1px",
     height: "1px",
   },
-  textInput: { margin: "5px", borderRadius: "8px" },
-  submitBtn: { maxWidth: "200px", alignSelf: "center", marginTop: "10px" },
+  textInput: { margin: "5px", borderRadius: "8px", width: "100%" },
+  submitBtn: {
+    maxWidth: "200px",
+    alignSelf: "center",
+    marginTop: "10px",
+    "&:hover": {
+      color: theme.palette.primary[500],
+    },
+  },
 }));
 
 export default function ContactForm(props) {
   const classes = useStyles();
   const [status, setStatus] = React.useState("");
+  const [formData, setFormData] = React.useState({
+    name: "",
+    _replyto: "",
+    message: "",
+    _gotcha: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const submitForm = (ev) => {
     ev.preventDefault();
     const form = ev.target;
-    console.log(form);
-    const data = new FormData(form);
+    const stateData = new FormData();
+    for (var key in formData) {
+      stateData.append(key, formData[key]);
+    }
     const xhr = new XMLHttpRequest();
     xhr.open(form.method, form.action);
     xhr.setRequestHeader("Accept", "application/json");
@@ -38,55 +57,66 @@ export default function ContactForm(props) {
         setStatus("ERROR");
       }
     };
-    xhr.send(data);
+    xhr.send(stateData);
   };
 
   return (
-    <form
+    <ValidatorForm
       className={classes.root}
       onSubmit={(ev) => submitForm(ev)}
       action="https://formspree.io/mlepydob"
       method="POST"
     >
-      <input className={classes.hpot} name="_gotcha"></input>
-      <Textfield
+      <input
+        className={classes.hpot}
+        name="_gotcha"
+        onChange={handleChange}
+      ></input>
+      <TextValidator
         variant="filled"
         label="Name"
         id="name"
         name="name"
         autoComplete="off"
         className={classes.textInput}
-        required
-      ></Textfield>
-      <Textfield
+        value={formData.name}
+        validators={["required"]}
+        errorMessages={["this field is required"]}
+        onChange={handleChange}
+      ></TextValidator>
+      <TextValidator
         variant="filled"
         label="Email"
         id="email"
         name="_replyto"
         autoComplete="off"
         className={classes.textInput}
-        required
-      ></Textfield>
-      <Textfield
+        value={formData._replyto}
+        validators={["isEmail"]}
+        errorMessages={["Please enter a valid Email"]}
+        onChange={handleChange}
+      ></TextValidator>
+      <TextValidator
         variant="filled"
         multiline
         rows={12}
         label="Say Something!"
         id="message"
         name="message"
+        value={formData.message}
         autoComplete="off"
         className={classes.textInput}
-        required
-      ></Textfield>
+        onChange={handleChange}
+      ></TextValidator>
 
       {status === "SUCCESS" ? (
         <p>Thanks!</p>
       ) : (
-        <Button className={classes.submitBtn} variant="outlined">
+        <Button className={classes.submitBtn} variant="outlined" type="submit">
           Submit
         </Button>
       )}
       {status === "ERROR" && <p>Ooops! There was an error.</p>}
-    </form>
+    </ValidatorForm>
   );
 }

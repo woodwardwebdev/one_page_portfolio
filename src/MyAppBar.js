@@ -56,12 +56,18 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     textDecoration: "none",
   },
+  drawerItem: {
+    borderRadius: "8px",
+    "&:hover $drawerIcon": { color: theme.palette.primary[500] },
+  },
+  drawerIcon: {},
 }));
 
 export default function MyAppBar(props) {
   const classes = useStyles();
   const [drawerOpen, setdrawerOpen] = React.useState(false);
   const { location } = props;
+  const { isBig, isMed, isSmall } = props.media;
 
   const toggleDrawer = () => {
     setdrawerOpen(!drawerOpen);
@@ -70,8 +76,6 @@ export default function MyAppBar(props) {
   const handleChangeLocation = (newLocation) => {
     toggleDrawer();
   };
-
-  const isDesktop = useMediaQuery("(min-width:800px)");
 
   const menuItems = [
     { name: "about", display: "About", icon: <PersonIcon /> },
@@ -95,7 +99,7 @@ export default function MyAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Drawer
-            anchor={isDesktop ? "left" : "top"}
+            anchor={isBig ? "left" : "top"}
             open={drawerOpen}
             onClose={toggleDrawer}
             classes={{ paper: classes.drawerPaper }}
@@ -110,9 +114,15 @@ export default function MyAppBar(props) {
                   <ListItem
                     button
                     key={item.name}
+                    className={classes.drawerItem}
                     onClick={() => handleChangeLocation(item.display)}
                   >
-                    <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItemIcon
+                      className={classes.drawerIcon}
+                      color="inherit"
+                    >
+                      {item.icon}
+                    </ListItemIcon>
                     <ListItemText primary={item.display} />
                   </ListItem>
                 </Link>
