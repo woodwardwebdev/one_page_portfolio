@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import projectsData from "../content/projectsData";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
@@ -24,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
   },
   titles: {
     textAlign: "center",
-    marginBottom: "1rem",
+    margin: "1.5rem",
+    marginBottom: "2rem",
   },
   greenLink: {
     color: "white",
@@ -103,8 +103,7 @@ export default function Projects(props) {
   return (
     <div className={classes.projectsPage}>
       <Container className={classes.titles}>
-        <Typography variant="h3">Projects</Typography>
-        <Typography variant="body2">
+        <Typography variant="h5">
           Questions?{" "}
           <Link to="/contact" className={classes.greenLink}>
             Get in Touch
@@ -145,11 +144,17 @@ export default function Projects(props) {
             onClose={toggleOpen}
             aria-labelledby={modalContent.title}
             aria-describedby={modalContent.title}
+            children={
+              <ProjectCard
+                project={modalContent}
+                isDesktop={isSmall ? false : true}
+              />
+            }
           >
-            <ProjectCard
+            {/* <ProjectCard
               project={modalContent}
               isDesktop={isSmall ? false : true}
-            />
+            /> */}
           </Modal>
         ) : null}
       </Container>

@@ -21,7 +21,7 @@ const projectsData = [
     author: "Colin Woodward",
     cols: 1,
     gitLink: "https://github.com/woodwardwebdev/color_picker_app",
-    liveLink: "http://www.google.co.uk",
+    liveLink: "",
     descText:
       "Built as a code-along, this app is a multi-page full featured React app. It allows the user to view color palettes, create their own and copy values directly to the clipboard.",
     improvements: [

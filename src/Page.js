@@ -14,7 +14,6 @@ export default function Page() {
   const [location, setLocation] = React.useState("");
   const changeLocation = (newLocation) => {
     const loc = newLocation.substring(1);
-    console.log(displayNames[loc]);
     setLocation(displayNames[loc]);
   };
   return (

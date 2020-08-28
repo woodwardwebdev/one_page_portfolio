@@ -54,7 +54,7 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "center",
   },
-  carouselImg: { height: "300px", borderRadius: "8px" },
+  carouselImg: { height: "300px", borderRadius: "20px" },
   buttons: {
     justifyContent: "center",
   },
@@ -89,7 +89,6 @@ export default function ProjectCard(props) {
   const classes = useStyles();
   const {
     title,
-    img,
     moreImgs,
     gitLink,
     liveLink,

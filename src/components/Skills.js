@@ -30,24 +30,24 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Skills(props) {
   const classes = useStyles();
-  const { isBig, isMed, isSmall } = props.media;
   const { changeLocation } = props;
+
   useEffect(() => {
     changeLocation(props.location.pathname);
   });
   return (
     <div className={classes.root}>
       <Box mb={3}>
-        <Typography variant="h3" mb={30}>
-          Skills:
+        <Typography variant="h3" mb={30} align="center">
+          Skills
         </Typography>
       </Box>
 
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
+          aria-controls="panelFrontend"
+          id="panelFrontend"
         >
           <Typography className={classes.heading}>Frontend</Typography>
         </AccordionSummary>
@@ -101,8 +101,8 @@ export default function Skills(props) {
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
+          aria-controls="panelBackend"
+          id="panelbackend"
         >
           <Typography className={classes.heading}>Backend</Typography>
         </AccordionSummary>
@@ -158,8 +158,8 @@ export default function Skills(props) {
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
+          aria-controls="panelSkills"
+          id="panelSkills"
         >
           <Typography className={classes.heading}>Key Skills</Typography>
         </AccordionSummary>

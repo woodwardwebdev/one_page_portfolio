@@ -10,7 +10,6 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Divider from "@material-ui/core/Divider";
 import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 
 const useStyles = makeStyles((theme) => ({
@@ -19,9 +18,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
+    flexDirection: "column",
+    padding: "1rem 0 1rem 0",
   },
   bold: { fontWeight: "bold" },
+
   recipeGrid: {
+    width: "90%",
     margin: "2rem",
     backgroundColor: "rgba(255,255,255,8%)",
     padding: "2rem",
@@ -30,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0px 0px 10px rgba(0,0,0,0.3)",
   },
   recipeSelector: {
-    margin: "1rem 0",
+    marginTop: "1rem",
     display: "flex",
     justifyContent: "center",
   },
@@ -49,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     minWidth: "200px",
     margin: "4px",
+    textTransform: "none",
     "&:hover": { cursor: "pointer" },
     border: "1px solid rgba(255,255,255,0.3)",
     borderRadius: "10px",
@@ -64,25 +68,27 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RecipeView(props) {
   const classes = useStyles();
-  const { isBig, isMed, isSmall } = props.media;
+  const { isBig } = props.media;
   const [recipe, setRecipe] = React.useState(0);
   const chooseRecipe = (i) => {
     setRecipe(i);
   };
   return (
     <Container className={classes.root} disableGutters={true}>
-      <Grid container spacing={2} className={classes.recipeGrid}>
-        <Typography variant="h6">
-          I love to cook in my spare time. Here's some of my favourites:
+      <Grid container direction="column">
+        <Typography variant="h6" align="center">
+          I love to cook in my spare time. Here's some of my favourites
         </Typography>
         <Grid
           item
           xs={12}
           className={classes.recipeSelector}
           direction={isBig ? "row" : "column"}
+          container
         >
           {recipeData.map((r, key) => (
             <Button
+              key={key}
               onClick={() => chooseRecipe(key)}
               className={clsx(
                 key === recipe ? classes.breadcrumbActive : classes.breadcrumb,
@@ -93,6 +99,8 @@ export default function RecipeView(props) {
             </Button>
           ))}
         </Grid>
+      </Grid>
+      <Grid container spacing={2} className={classes.recipeGrid}>
         <Grid item sm={12} md={5} className={classes.recipeIngredients}>
           <Card>
             <CardMedia
@@ -100,8 +108,8 @@ export default function RecipeView(props) {
               image={recipeData[recipe].img}
             />
             <List className={classes.ingredientList}>
-              {recipeData[recipe].ingredients.map((i) => (
-                <ListItem alignItems="flex-end">
+              {recipeData[recipe].ingredients.map((i, key) => (
+                <ListItem alignItems="flex-end" key={key}>
                   {i.ingredient} - {i.amount}
                 </ListItem>
               ))}
@@ -114,8 +122,8 @@ export default function RecipeView(props) {
           </Typography>
           <Divider className={classes.divider} />
           <Typography variant="body1">
-            {recipeData[recipe].method.map((m) => (
-              <p>{m}</p>
+            {recipeData[recipe].method.map((m, key) => (
+              <p key={key}>{m}</p>
             ))}
           </Typography>
         </Grid>

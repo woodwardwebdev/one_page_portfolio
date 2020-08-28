@@ -36,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function About(props) {
   const classes = useStyles();
-  const { isBig, isMed, isSmall } = props.media;
   const { changeLocation } = props;
   useEffect(() => {
     changeLocation(props.location.pathname);
