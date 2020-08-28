@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { Link } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -19,6 +18,7 @@ import MailIcon from "@material-ui/icons/Mail";
 import KitchenIcon from "@material-ui/icons/Kitchen";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import TwitterIcon from "@material-ui/icons/Twitter";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,7 +67,7 @@ export default function MyAppBar(props) {
   const classes = useStyles();
   const [drawerOpen, setdrawerOpen] = React.useState(false);
   const { location } = props;
-  const { isBig, isMed, isSmall } = props.media;
+  const { isBig } = props.media;
 
   const toggleDrawer = () => {
     setdrawerOpen(!drawerOpen);
@@ -146,6 +146,13 @@ export default function MyAppBar(props) {
             color="inherit"
           >
             <LinkedInIcon className={classes.navLink} />
+          </a>
+          <a
+            href="https://twitter.com/woodwardaudio"
+            target="new"
+            color="inherit"
+          >
+            <TwitterIcon className={classes.navLink} />
           </a>
         </Toolbar>
       </AppBar>

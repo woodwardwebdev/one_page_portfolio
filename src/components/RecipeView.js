@@ -64,7 +64,11 @@ const useStyles = makeStyles((theme) => ({
     // color: "rgb(35, 255, 64)",
     color: theme.palette.primary[500],
   },
-  divider: { margin: "20px 0" },
+  divider: {
+    margin: "1rem 0 1rem 0",
+    backgroundColor: "rgba(35, 255, 64, 0.4)",
+    boxShadow: "0px 0px 5px rgba(35,255,64,0.3)",
+  },
 }));
 
 export default function RecipeView(props) {

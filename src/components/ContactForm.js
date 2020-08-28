@@ -13,7 +13,12 @@ const useStyles = makeStyles((theme) => ({
     width: "1px",
     height: "1px",
   },
-  textInput: { margin: "5px", borderRadius: "8px", width: "100%" },
+  textInput: {
+    margin: "5px",
+    borderRadius: "8px",
+    width: "100%",
+    boxShadow: "0px 8px 10px rgba(0,0,0,0.1)",
+  },
   submitBtn: {
     maxWidth: "200px",
     alignSelf: "center",

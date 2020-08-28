@@ -42,9 +42,7 @@ const useStyles = makeStyles({
     borderRadius: "10px",
     height: "200px",
   },
-  cardDescription: {
-    marginTop: "1rem",
-  },
+  cardDescription: {},
   gridHeader: {
     marginBottom: "-1.8rem",
   },
@@ -57,7 +55,9 @@ const useStyles = makeStyles({
   carouselImg: { height: "300px", borderRadius: "20px" },
   buttons: {
     justifyContent: "center",
+    margin: "1.5rem",
   },
+
   improveList: {
     padding: "8px",
     margin: 0,
@@ -107,6 +107,7 @@ export default function ProjectCard(props) {
         >
           {title}
         </Typography>
+
         <CardMedia
           className={isDesktop ? classes.mediaDesktop : classes.mediaMobile}
           // image={img}
@@ -123,7 +124,22 @@ export default function ProjectCard(props) {
             ))}
           </Carousel>
         </CardMedia>
-
+        <CardActions className={classes.buttons}>
+          {gitLink !== "" ? (
+            <Button variant="outlined">
+              <a href={gitLink} className={classes.buttonLink} target="blank">
+                GitHub
+              </a>
+            </Button>
+          ) : null}
+          {liveLink !== "" ? (
+            <Button variant="outlined">
+              <a href={liveLink} className={classes.buttonLink} target="blank">
+                Live Demo
+              </a>
+            </Button>
+          ) : null}
+        </CardActions>
         <Grid container spacing={5} className={classes.cardDescription}>
           <Grid item xs={12} sm={6} className={classes.order1}>
             <Typography variant="h5" className={classes.gridHeader}>
@@ -163,22 +179,6 @@ export default function ProjectCard(props) {
           </Grid>
         </Grid>
       </CardContent>
-      <CardActions className={classes.buttons}>
-        {gitLink !== "" ? (
-          <Button size="small">
-            <a href={gitLink} className={classes.buttonLink} target="blank">
-              GitHub
-            </a>
-          </Button>
-        ) : null}
-        {liveLink !== "" ? (
-          <Button size="small">
-            <a href={liveLink} className={classes.buttonLink} target="blank">
-              Live Demo
-            </a>
-          </Button>
-        ) : null}
-      </CardActions>
     </Card>
   );
 }

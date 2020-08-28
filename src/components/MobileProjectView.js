@@ -8,6 +8,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import Carousel from "react-material-ui-carousel";
+import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
   mobileView: {
@@ -29,6 +31,37 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: "none",
     },
   },
+  divider: {
+    margin: "1rem 0 1rem 0",
+    backgroundColor: "rgba(35, 255, 64, 0.4)",
+    boxShadow: "0px 0px 5px rgba(35,255,64,0.3)",
+  },
+  carousel: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  improveList: {
+    padding: "8px",
+    margin: 0,
+    marginTop: "-0.5rem",
+    fontWeight: 400,
+    fontSize: "0.875rem",
+    lineHeight: 1.43,
+    letterSpacing: "0.01071em",
+    color: "rgba(255,255,255,0.7)",
+  },
+  listItem: {
+    marginBottom: "0.5rem",
+    listStyle: "none",
+  },
+  carouselImg: { height: "170px", borderRadius: "8px" },
+  carouselIndicator: { color: theme.palette.primary[500], fontSize: "3rem" },
+  carouselIndicatorActive: { fontSize: "3rem" },
+  buttons: {
+    justifyContent: "center",
+  },
 }));
 
 export default function MobileProjectView(props) {
@@ -46,10 +79,44 @@ export default function MobileProjectView(props) {
   return (
     <Card className={classes.mobileView}>
       <CardHeader title={project.title}></CardHeader>
-      <CardMedia className={classes.media} image={project.img}></CardMedia>
+      <CardMedia className={classes.media} image={project.img}>
+        {/* leaving this Carousel in as an option - remove before deployment */}
+        {/* <Carousel
+          className={classes.carousel}
+          navButtonsAlwaysVisible={false}
+          indicators={true}
+          indicatorProps={{ className: `${classes.carouselIndicator}` }}
+          activeIndicatorProps={{
+            className: `${classes.carouselIndicatorActive}`,
+          }}
+        >
+          {project.moreImgs.map((img) => (
+            <img className={classes.carouselImg} src={img} alt="" />
+          ))}
+        </Carousel> */}
+      </CardMedia>
       <CardContent>
+        <Divider className={classes.divider} />
+        <Typography variant="h5" className={classes.gridHeader}>
+          Project Description
+        </Typography>
+        <Divider className={classes.divider} />
         <Typography variant="body2" color="textSecondary" component="p">
           {project.descText}
+        </Typography>
+        <Divider className={classes.divider} />
+        <Typography variant="h5" className={classes.gridHeader}>
+          Future Improvements
+        </Typography>
+        <Divider className={classes.divider} />
+        <Typography variant="body2" color="textSecondary" component="p">
+          <ul className={classes.improveList}>
+            {project.improvements.map((i) => (
+              <li key={i} className={classes.listItem}>
+                {i}
+              </li>
+            ))}
+          </ul>
         </Typography>
       </CardContent>
       <CardActions className={classes.cardButtons}>
