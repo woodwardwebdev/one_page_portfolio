@@ -13,7 +13,7 @@ import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
   mobileView: {
-    maxWidth: 345,
+    maxWidth: 425,
     height: "95%",
     width: "90%",
     overflow: "scroll",
