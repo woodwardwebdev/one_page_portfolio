@@ -15,7 +15,7 @@ export default function Page() {
   const [location, setLocation] = React.useState("");
   const isBig = useMediaQuery("(min-width:900px)");
   const isMed = useMediaQuery("(min-width:600px)");
-  const isSmall = useMediaQuery("(max-width:599px");
+  const isSmall = useMediaQuery("(max-width:599px)");
   const media = { isBig, isMed, isSmall };
   const changeLocation = (newLocation) => {
     const loc = newLocation.substring(1);

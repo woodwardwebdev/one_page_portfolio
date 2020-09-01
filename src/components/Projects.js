@@ -99,6 +99,10 @@ export default function Projects(props) {
     }
   };
 
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   useEffect(() => {
     changeLocation(props.location.pathname);
   });
@@ -106,12 +110,9 @@ export default function Projects(props) {
   return (
     <div className={classes.projectsPage}>
       <Container className={classes.titles}>
-        <Typography variant="h5">
-          Questions?{" "}
-          {/* <Link to="/contact" className={classes.greenLink}>
-            Click Me
-          </Link> */}
-        </Typography>
+        {/* <Typography variant="h5">
+          Questions?
+        </Typography> */}
       </Container>
       <Container className={classes.gridContainer}>
         <GridList
@@ -147,10 +148,12 @@ export default function Projects(props) {
             onClose={toggleOpen}
             aria-labelledby={modalContent.title}
             aria-describedby={modalContent.title}
+            closeModal={closeModal}
             children={
               <ProjectCard
                 project={modalContent}
                 isDesktop={isSmall ? false : true}
+                closeModal={closeModal}
               />
             }
           ></Modal>
