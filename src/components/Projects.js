@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import projectsData from "../content/projectsData";
 import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
