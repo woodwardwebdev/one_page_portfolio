@@ -8,7 +8,6 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Carousel from "react-material-ui-carousel";
 import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
