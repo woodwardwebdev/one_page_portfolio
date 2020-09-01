@@ -2,11 +2,9 @@
 
 Personal portfolio page built with React
 
----
-
 ### Tools Used
 
-- create-react-app used to bootstrap the project
+- Create React App used to bootstrap the project
 - Material UI for UI elements
 - Material UI's makeThemes module for theming and styling
 - Formspree for handling contact forms and forwarding information
