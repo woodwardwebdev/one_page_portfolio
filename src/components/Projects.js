@@ -130,7 +130,7 @@ export default function Projects(props) {
               <img
                 src={tile.img}
                 alt={tile.title}
-                className={classes.tileImg}
+                className={isSmall ? null : classes.tileImg}
               />
               <GridListTileBar
                 title={tile.title}
