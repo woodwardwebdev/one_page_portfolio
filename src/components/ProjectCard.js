@@ -13,16 +13,19 @@ const useStyles = makeStyles({
   root: {
     height: "90%",
     minWidth: 270,
-    maxWidth: 760,
+    maxWidth: "75%",
     padding: "1%",
     overflow: "scroll",
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
+  closeButton: {
+    margin: 0,
+    border: 0,
+    float: "right",
+    fontSize: "1.4rem",
   },
   title: {
+    width: "80%",
+    margin: "0 auto",
     marginBottom: "2rem",
     textAlign: "center",
   },
@@ -96,8 +99,13 @@ export default function ProjectCard(props) {
     improvements,
   } = props.project;
   const isDesktop = props.isDesktop;
+  const { closeModal } = props;
   return (
     <Card className={classes.root} variant="outlined">
+      <Button size="small" className={classes.closeButton} onClick={closeModal}>
+        {" "}
+        X{" "}
+      </Button>
       <CardContent>
         <Typography
           gutterBottom
@@ -110,9 +118,7 @@ export default function ProjectCard(props) {
 
         <CardMedia
           className={isDesktop ? classes.mediaDesktop : classes.mediaMobile}
-          // image={img}
           title={title}
-          // component="img"
         >
           <Carousel
             className={classes.carousel}

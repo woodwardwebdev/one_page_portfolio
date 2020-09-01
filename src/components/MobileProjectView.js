@@ -9,6 +9,7 @@ import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
+import KeyboardBackspaceIcon from "@material-ui/icons/KeyboardBackspace";
 
 const useStyles = makeStyles((theme) => ({
   mobileView: {
@@ -18,8 +19,9 @@ const useStyles = makeStyles((theme) => ({
     overflow: "scroll",
     padding: "10px",
     borderRadius: "6px",
-    textAlign: "center",
+    // textAlign: "center",
   },
+  title: { textAlign: "center", paddingTop: 0 },
   media: { height: "200px", borderRadius: "6px" },
   cardButtons: {
     margin: "10px",
@@ -61,6 +63,8 @@ const useStyles = makeStyles((theme) => ({
   buttons: {
     justifyContent: "center",
   },
+  buttonContainer: {},
+  backBtn: { margin: 0, padding: 0, textAlign: "left", minWidth: "36px" },
 }));
 
 export default function MobileProjectView(props) {
@@ -77,7 +81,13 @@ export default function MobileProjectView(props) {
 
   return (
     <Card className={classes.mobileView}>
-      <CardHeader title={project.title}></CardHeader>
+      <div className={classes.buttonContainer}>
+        <Button className={classes.backBtn} onClick={back}>
+          <KeyboardBackspaceIcon />
+        </Button>
+      </div>
+      <CardHeader className={classes.title} title={project.title}></CardHeader>
+
       <CardMedia className={classes.media} image={project.img}>
         {/* leaving this Carousel in as an option - remove before deployment */}
         {/* <Carousel
@@ -141,11 +151,6 @@ export default function MobileProjectView(props) {
             </a>
           </Button>
         ) : null}
-        <div className={classes.backBtn}>
-          <Button onClick={back} variant="outlined">
-            Back
-          </Button>
-        </div>
       </CardActions>
     </Card>
   );
