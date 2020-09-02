@@ -6,7 +6,9 @@ const theme = createMuiTheme({
     type: "dark",
   },
   typography: {
-    fontFamily: "Cutive Mono, Helvetica, Sans-serif",
+    fontFamily: "Lato, Cutive Mono, Helvetica, Sans-serif",
+    h5: { fontWeight: "bold" },
+    body2: { letterSpacing: "0.1em" },
   },
 });
 export default theme;

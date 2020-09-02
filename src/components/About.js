@@ -73,7 +73,7 @@ export default function About(props) {
           </Typography>
           <Typography variant="body2" className={classes.paragraph}>
             If you're hiring and looking for a dedicated and driven junior
-            developer, or even if you just want to swap BBQ tips, get in touch!
+            developer, or if you just want to swap recipes, get in touch!
           </Typography>
         </Grid>
       </Grid>

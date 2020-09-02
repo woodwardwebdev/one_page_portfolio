@@ -23,6 +23,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    font: "Cutive Mono",
   },
   myBar: {
     backgroundColor: "#121212",
@@ -30,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: "1px solid white",
     height: "7vh",
     justifyContent: "center",
+    fontFamily: "Cutive Mono, Helvetica, Sans Serif",
   },
   menuButton: {
     marginRight: theme.spacing(2),
