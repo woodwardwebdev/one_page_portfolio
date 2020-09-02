@@ -23,6 +23,7 @@ const projectsData = [
     cols: 1,
     gitLink: "https://github.com/woodwardwebdev/color_picker_app",
     liveLink: "",
+    tech: ["React.js"],
     descText:
       "Built as a code-along, this app is a multi-page full featured React app. It allows the user to view color palettes, create their own and copy values directly to the clipboard.",
     improvements: [
@@ -41,6 +42,7 @@ const projectsData = [
     cols: 1,
     gitLink: "https://github.com/woodwardwebdev/kick_darrack_discord_bot",
     liveLink: "",
+    tech: ["node.js", "Express", "Discord API"],
     descText:
       "This node.js app creates a bot on a Discord server that kicks a specific player every Monday at a set time. I built this to fix the problem of a player logging in with a new disposable account each week and clogging up the member roster.",
     improvements: [
@@ -57,6 +59,7 @@ const projectsData = [
     cols: 1,
     gitLink: "https://github.com/woodwardwebdev/travelapp",
     liveLink: "",
+    tech: [],
     descText:
       "I built this app to experiment with Google's Directions API. The app lets you pre-define locations of travel and stores them in the database. You can then choose any two of them and the app will use the API to calculate the mileage of the trip and store that as a Journey in the database. I learned a lot about API useage and environment variables while building this.",
     improvements: [
@@ -75,6 +78,7 @@ const projectsData = [
     cols: 1,
     gitLink: "https://github.com/woodwardwebdev/movie_search",
     liveLink: "",
+    tech: [],
     descText:
       "This app was built in Express using ejs templating. It uses an open movie database API to let the user search for a movie title and see the cover image and more information about the top ten results related to their search. This was the first app I finished that I consider fully useful and functional.",
     improvements: [
@@ -92,6 +96,7 @@ const projectsData = [
     cols: 1,
     gitLink: "https://github.com/woodwardwebdev/opinionrated_backend",
     liveLink: "",
+    tech: [],
     descText:
       "I built this app in React with a node.js / MongoDB backend. It allows users to create anonymous questions, to be answered by other users. After this, all users can see the answers to questions, randomly chosen and vote on whether they agree or disagree with that opinion. Only after they have voted can they see who wrote the response. This app taught me a lot about relations in databases and thinking logically through data structures and how best to pass those through the component tree.",
     improvements: ["Implement accounts and authentication", "Improve styling"],
@@ -105,6 +110,7 @@ const projectsData = [
     cols: 1,
     gitLink: "",
     liveLink: "",
+    tech: [],
     descText:
       "This is a simple To-Do app re-skinned to be a shopping list. I don't think this could be a Junior Dev portfolio without one of these, so here it is! Built with React.",
     improvements: [

@@ -5,8 +5,14 @@ import { Typography, Container } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: { width: "80%", height: "90%", margin: "auto" },
-  header: { textAlign: "center", marginBottom: "1rem" },
+  header: {
+    textAlign: "center",
+    marginBottom: "1rem",
+    width: "70%",
+    margin: "0 auto",
+  },
   formContainer: { width: "70%" },
+  spaced: { letterSpacing: "0.3rem" },
 }));
 
 export default function Contact(props) {
@@ -18,9 +24,12 @@ export default function Contact(props) {
   });
   return (
     <div className={classes.root}>
-      <Typography variant={isBig ? "h3" : "h5"} className={classes.header}>
-        Get in Touch
-      </Typography>
+      <div className={classes.header}>
+        <Typography variant="h5" className={classes.spaced}>
+          Send a message{" "}
+        </Typography>
+      </div>
+
       <Container className={isBig ? classes.formContainer : null}>
         <ContactForm />
       </Container>

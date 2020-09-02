@@ -50,6 +50,7 @@ const useStyles = makeStyles({
   gridHeader: {
     marginBottom: "-1.8rem",
   },
+
   carousel: {
     display: "flex",
     flexDirection: "column",
@@ -175,6 +176,7 @@ export default function ProjectCard(props) {
             </div>
           </Grid>
         </Grid>
+
         <CardActions className={classes.buttons}>
           {gitLink !== "" ? (
             <Button variant="outlined">
