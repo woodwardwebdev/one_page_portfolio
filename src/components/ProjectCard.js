@@ -16,6 +16,7 @@ const useStyles = makeStyles({
     maxWidth: "75%",
     padding: "1%",
     overflow: "scroll",
+    textAlign: "center",
   },
   closeButton: {
     margin: 0,
@@ -125,8 +126,13 @@ export default function ProjectCard(props) {
             navButtonsAlwaysVisible={moreImgs.length < 2 ? false : true}
             indicators={false}
           >
-            {moreImgs.map((img) => (
-              <img className={classes.carouselImg} src={img} alt="" />
+            {moreImgs.map((img, key) => (
+              <img
+                className={classes.carouselImg}
+                src={img}
+                alt={title}
+                key={key}
+              />
             ))}
           </Carousel>
         </CardMedia>

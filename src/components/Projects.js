@@ -9,16 +9,10 @@ import Modal from "@material-ui/core/Modal";
 import ProjectCard from "./ProjectCard";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    overflow: "hidden",
-    backgroundColor: theme.palette.background.paper,
-  },
   projectsPage: {
     height: "100%",
     width: "90%",
+    margin: "30px 0",
   },
   titles: {
     textAlign: "center",
@@ -35,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   gridContainer: {
     display: "flex",
     justifyContent: "center",
-    padding: "1.5%",
+    padding: "3% 1.5%",
     backgroundColor: "rgba(255,255,255,8%)",
     borderRadius: "20px",
     marginBottom: "2%",
@@ -108,11 +102,6 @@ export default function Projects(props) {
 
   return (
     <div className={classes.projectsPage}>
-      <Container className={classes.titles}>
-        {/* <Typography variant="h5">
-          Questions?
-        </Typography> */}
-      </Container>
       <Container className={classes.gridContainer}>
         <GridList
           cellHeight={260}
@@ -147,13 +136,14 @@ export default function Projects(props) {
             onClose={toggleOpen}
             aria-labelledby={modalContent.title}
             aria-describedby={modalContent.title}
-            closeModal={closeModal}
             children={
-              <ProjectCard
-                project={modalContent}
-                isDesktop={isSmall ? false : true}
-                closeModal={closeModal}
-              />
+              <React.Fragment>
+                <ProjectCard
+                  project={modalContent}
+                  isDesktop={isSmall ? false : true}
+                  closeModal={closeModal}
+                />
+              </React.Fragment>
             }
           ></Modal>
         ) : null}

@@ -9,16 +9,12 @@ import Bonus from "./components/Bonus";
 import MobileProjectView from "./components/MobileProjectView";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
   displayWindow: {
     width: "100%",
     height: "98%",
     margin: "1%",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
   },
 }));
 

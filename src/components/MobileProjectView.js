@@ -16,12 +16,13 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 425,
     height: "95%",
     width: "90%",
-    overflow: "scroll",
+    margin: "30px 0",
     padding: "10px",
+    paddingBottom: "30px",
     borderRadius: "6px",
-    // textAlign: "center",
+    boxShadow: "0px 0px 10px rgba(0,0,0,0.3)",
   },
-  title: { textAlign: "center", paddingTop: 0 },
+  title: { textAlign: "center" },
   media: { height: "200px", borderRadius: "6px" },
   cardButtons: {
     margin: "10px",
@@ -110,7 +111,12 @@ export default function MobileProjectView(props) {
           Project Description
         </Typography>
         <Divider className={classes.divider} />
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          component="p"
+          align="center"
+        >
           {project.descText}
         </Typography>
         <Divider className={classes.divider} />
@@ -118,15 +124,21 @@ export default function MobileProjectView(props) {
           Future Improvements
         </Typography>
         <Divider className={classes.divider} />
-        <Typography variant="body2" color="textSecondary" component="p">
-          <ul className={classes.improveList}>
-            {project.improvements.map((i) => (
-              <li key={i} className={classes.listItem}>
+
+        <ul className={classes.improveList}>
+          {project.improvements.map((i) => (
+            <li key={i} className={classes.listItem}>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                component="p"
+                align="center"
+              >
                 {i}
-              </li>
-            ))}
-          </ul>
-        </Typography>
+              </Typography>
+            </li>
+          ))}
+        </ul>
       </CardContent>
       <CardActions className={classes.cardButtons}>
         {project.gitLink !== "" ? (

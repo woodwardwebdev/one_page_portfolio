@@ -8,6 +8,7 @@ Personal portfolio page built with React
 - Material UI for UI elements
 - Material UI's makeThemes module for theming and styling
 - Formspree for handling contact forms and forwarding information
+- Netlify hosting, making use of their auto-build deployment tools linked to Github.
 
 ### Goals
 

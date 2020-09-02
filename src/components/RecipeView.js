@@ -118,7 +118,7 @@ export default function RecipeView(props) {
             />
             <List className={classes.ingredientList}>
               {recipeData[recipe].ingredients.map((i, key) => (
-                <ListItem alignItems="flex-end" key={key}>
+                <ListItem key={key}>
                   {i.ingredient} - {i.amount}
                 </ListItem>
               ))}
@@ -130,11 +130,13 @@ export default function RecipeView(props) {
             {recipeData[recipe].desc}
           </Typography>
           <Divider className={classes.divider} />
-          <Typography variant="body1">
-            {recipeData[recipe].method.map((m, key) => (
-              <p key={key}>{m}</p>
-            ))}
-          </Typography>
+          {recipeData[recipe].method.map((m, key) => (
+            <p key={key}>
+              <Typography variant="body1" component="span">
+                {m}
+              </Typography>
+            </p>
+          ))}
         </Grid>
       </Grid>
     </Container>
