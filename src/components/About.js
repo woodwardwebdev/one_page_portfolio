@@ -39,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
 export default function About(props) {
   const classes = useStyles();
   const { changeLocation } = props;
+  const { isSmall } = props.media;
   useEffect(() => {
     changeLocation(props.location.pathname);
   });
@@ -53,8 +54,10 @@ export default function About(props) {
           ></img>
         </Grid>
         <Grid item sm={12} md={7} className={classes.gridBox2}>
-          <Typography variant="h3">Hi, I'm Colin.</Typography>
-          <Typography variant="h6">
+          <Typography variant="h3" align={isSmall ? "center" : "left"}>
+            Hi, I'm Colin.
+          </Typography>
+          <Typography variant="h6" align={isSmall ? "center" : "left"}>
             Web developer, sound engineer and all-round tech enthusiast.
           </Typography>
           <Divider className={classes.divider} />
