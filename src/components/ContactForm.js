@@ -63,6 +63,12 @@ export default function ContactForm(props) {
       }
     };
     xhr.send(stateData);
+    setFormData({
+      name: "",
+      _replyto: "",
+      message: "",
+      _gotcha: "",
+    });
   };
 
   return (
@@ -115,13 +121,13 @@ export default function ContactForm(props) {
       ></TextValidator>
 
       {status === "SUCCESS" ? (
-        <p>Thanks!</p>
+        <p>Thanks! I'll get back to you soon.</p>
       ) : (
         <Button className={classes.submitBtn} variant="outlined" type="submit">
           Submit
         </Button>
       )}
-      {status === "ERROR" && <p>Ooops! There was an error.</p>}
+      {status === "ERROR" && <p>Sorry, there was an error.</p>}
     </ValidatorForm>
   );
 }
