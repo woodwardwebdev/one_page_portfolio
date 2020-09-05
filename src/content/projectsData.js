@@ -22,7 +22,7 @@ const projectsData = [
     author: "Colin Woodward",
     cols: 1,
     gitLink: "https://github.com/woodwardwebdev/color_picker_app",
-    liveLink: "",
+    liveLink: "https://cw-react-colors.netlify.app/",
     tech: ["React.js"],
     descText:
       "Built as a code-along, this app is a multi-page full featured React app. It allows the user to view color palettes, create their own and copy values directly to the clipboard.",
@@ -77,7 +77,7 @@ const projectsData = [
     author: "Colin Woodward",
     cols: 1,
     gitLink: "https://github.com/woodwardwebdev/movie_search",
-    liveLink: "",
+    liveLink: "https://movie-app-with-api.herokuapp.com/",
     tech: [],
     descText:
       "This app was built in Express using ejs templating. It uses an open movie database API to let the user search for a movie title and see the cover image and more information about the top ten results related to their search. This was the first app I finished that I consider fully useful and functional.",
