@@ -33,7 +33,6 @@ export default function Contact(props) {
       <Container className={isBig ? classes.formContainer : null}>
         <ContactForm />
       </Container>
-      <Container></Container>
     </div>
   );
 }
