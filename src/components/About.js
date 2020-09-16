@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
   },
   gridContainer: {
-    padding: "10%",
+    padding: "8%",
   },
   gridBox: {
     display: "flex",
@@ -33,6 +33,13 @@ const useStyles = makeStyles((theme) => ({
   },
   paragraph: {
     marginTop: "1rem",
+  },
+  greenLink: {
+    textDecoration: "none",
+    color: "inherit",
+    "&:hover": {
+      color: "rgba(35, 255, 64, 0.6)",
+    },
   },
 }));
 
@@ -71,8 +78,31 @@ export default function About(props) {
             in React.
           </Typography>
           <Typography variant="body2" className={classes.paragraph}>
-            Outside of work I love to play guitar, cook delicious food and train
-            in weightlifting.
+            Outside of work I love to play guitar, cook delicious food, ride
+            motorcycles and train in Olympic-style weightlifting.
+          </Typography>
+          <Typography variant="body2" className={classes.paragraph}>
+            Currently I'm working on re-writing my 'mileage' app, turning it
+            into a RESTful API backend build in Node.js which is consumed by a
+            React.js frontend in a snazzy dashboard style. I aim to have this
+            finished and up on here before the end of Sept, but if you want a
+            sneak peek check out the{" "}
+            <a
+              className={classes.greenLink}
+              href="https://github.com/woodwardwebdev/traveltracker_backend"
+              target="blank"
+            >
+              backend
+            </a>{" "}
+            or{" "}
+            <a
+              className={classes.greenLink}
+              href="https://github.com/woodwardwebdev/traveltracker_frontend"
+              target="blank"
+            >
+              frontend
+            </a>{" "}
+            repo's on Github!
           </Typography>
           <Typography variant="body2" className={classes.paragraph}>
             If you're hiring and looking for a dedicated and driven junior
