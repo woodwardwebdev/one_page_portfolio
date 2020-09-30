@@ -3,6 +3,9 @@ import colors2 from "../img/project_imgs/colors/2.png";
 import colors3 from "../img/project_imgs/colors/3.png";
 import colors4 from "../img/project_imgs/colors/4.png";
 
+import rada1 from "../img/project_imgs/rada/1.png";
+import rada2 from "../img/project_imgs/rada/2.png";
+
 import discord1 from "../img/project_imgs/discord/discord.png";
 
 import mileage1 from "../img/project_imgs/mileage/1.png";
@@ -26,6 +29,7 @@ const mileageImgs = [mileage1, mileage2, mileage3];
 const moviesImgs = [movies1, movies2, movies3];
 const opinionratedImgs = [opinionrated1, opinionrated2];
 const shoppingImgs = [shopping1, shopping2, shopping3];
+const radaImgs = [rada1, rada2]
 
 export {
   colorsImgs,
@@ -34,4 +38,5 @@ export {
   moviesImgs,
   opinionratedImgs,
   shoppingImgs,
+  radaImgs
 };
