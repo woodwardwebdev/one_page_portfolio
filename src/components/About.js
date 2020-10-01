@@ -82,27 +82,7 @@ export default function About(props) {
             motorcycles and train in Olympic-style weightlifting.
           </Typography>
           <Typography variant="body2" className={classes.paragraph}>
-            Currently I'm working on re-writing my 'mileage' app, turning it
-            into a RESTful API backend build in Node.js which is consumed by a
-            React.js frontend in a snazzy dashboard style. I aim to have this
-            finished and up on here before the end of Sept, but if you want a
-            sneak peek check out the{" "}
-            <a
-              className={classes.greenLink}
-              href="https://github.com/woodwardwebdev/traveltracker_backend"
-              target="blank"
-            >
-              backend
-            </a>{" "}
-            or{" "}
-            <a
-              className={classes.greenLink}
-              href="https://github.com/woodwardwebdev/traveltracker_frontend"
-              target="blank"
-            >
-              frontend
-            </a>{" "}
-            repo's on Github!
+            I'm currently working on a freelance basis with several clients and constantly learning.
           </Typography>
           <Typography variant="body2" className={classes.paragraph}>
             If you're hiring and looking for a dedicated and driven junior
