@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "30px",
     borderRadius: "6px",
     boxShadow: "0px 0px 10px rgba(0,0,0,0.3)",
+    textAlign: 'center'
   },
   title: { textAlign: "center" },
   media: { height: "200px", borderRadius: "6px" },
