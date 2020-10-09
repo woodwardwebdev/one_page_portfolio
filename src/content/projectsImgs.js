@@ -23,6 +23,11 @@ import shopping1 from "../img/project_imgs/shopping/1.png";
 import shopping2 from "../img/project_imgs/shopping/2.png";
 import shopping3 from "../img/project_imgs/shopping/3.png";
 
+import brochure1 from "../img/project_imgs/brochure/1.jpg";
+import brochure2 from "../img/project_imgs/brochure/2.jpg";
+import brochure3 from "../img/project_imgs/brochure/3.jpg";
+import brochure4 from "../img/project_imgs/brochure/4.jpg";
+
 const colorsImgs = [colors1, colors2, colors3, colors4];
 const discordImgs = [discord1];
 const mileageImgs = [mileage1, mileage2, mileage3];
@@ -30,6 +35,7 @@ const moviesImgs = [movies1, movies2, movies3];
 const opinionratedImgs = [opinionrated1, opinionrated2];
 const shoppingImgs = [shopping1, shopping2, shopping3];
 const radaImgs = [rada1, rada2]
+const brochureImgs = [brochure1, brochure2, brochure3, brochure4]
 
 export {
   colorsImgs,
@@ -38,5 +44,6 @@ export {
   moviesImgs,
   opinionratedImgs,
   shoppingImgs,
-  radaImgs
+  radaImgs,
+  brochureImgs
 };

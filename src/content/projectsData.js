@@ -1,19 +1,38 @@
+import brochure from '../img/project_imgs/hero/brochure.png'
 import colors from "../img/project_imgs/hero/colors.png";
 import discord from "../img/project_imgs/hero/discord.png";
 import mileage from "../img/project_imgs/hero/mileage.png";
 import movies from "../img/project_imgs/hero/movies.png";
-import opinionrated from "../img/project_imgs/hero/opinionrated.png";
 import rada from '../img/project_imgs/hero/rada.png'
 import {
   colorsImgs,
   discordImgs,
   mileageImgs,
   moviesImgs,
-  opinionratedImgs,
-  radaImgs
+  radaImgs,
+  brochureImgs
 } from "../content/projectsImgs";
 
 const projectsData = [
+  {
+    img: brochure,
+    moreImgs: brochureImgs,
+    title: "Brochure Site",
+    slug: "brochure",
+    author: "Colin Woodward",
+    cols: 1,
+    gitLink: "https://github.com/woodwardwebdev/brochure_site",
+    liveLink: "https://brochure-site-one.vercel.app/",
+    tech: ["Next.js"],
+    descText:
+      "A responsive multi-page brochure style site built using Next.js. The framework allows for server side rendering for speedy load times. The owner of the site can use a CMS provided by Prismic.io to write and add blogs to it.",
+    improvements: [
+      "More Interactive pages",
+      "Style Tweaks",
+      "Animations and polish",
+      "Maps and widgets",
+    ],
+  },
   {
     img: colors,
     moreImgs: colorsImgs,
@@ -104,20 +123,7 @@ const projectsData = [
       "Allow user to choose how many results are shown, rather than a hard coded ten",
     ],
   },
-  {
-    img: opinionrated,
-    moreImgs: opinionratedImgs,
-    title: "Opinionrated! - A question and answer voting app",
-    slug: "opinionrated",
-    author: "Colin Woodward",
-    cols: 1,
-    gitLink: "https://github.com/woodwardwebdev/opinionrated_backend",
-    liveLink: "",
-    tech: [],
-    descText:
-      "I built this app in React with a node.js / MongoDB backend. It allows users to create anonymous questions, to be answered by other users. After this, all users can see the answers to questions, randomly chosen and vote on whether they agree or disagree with that opinion. Only after they have voted can they see who wrote the response. This app taught me a lot about relations in databases and thinking logically through data structures and how best to pass those through the component tree.",
-    improvements: ["Implement accounts and authentication", "Improve styling"],
-  },
+
 ];
 
 export default projectsData;
