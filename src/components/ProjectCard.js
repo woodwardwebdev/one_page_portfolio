@@ -138,6 +138,23 @@ export default function ProjectCard(props) {
           </Carousel>
         </CardMedia>
 
+        <CardActions className={classes.buttons}>
+          {gitLink !== "" ? (
+            <Button variant="outlined">
+              <a href={gitLink} className={classes.buttonLink} target="blank">
+                GitHub
+              </a>
+            </Button>
+          ) : null}
+          {liveLink !== "" ? (
+            <Button variant="outlined">
+              <a href={liveLink} className={classes.buttonLink} target="blank">
+                Live Demo
+              </a>
+            </Button>
+          ) : null}
+        </CardActions>
+
         <Grid container spacing={5} className={classes.cardDescription}>
           <Grid item xs={12} sm={6} className={classes.order1}>
             <Typography variant="h5" className={classes.gridHeader}>
@@ -176,23 +193,6 @@ export default function ProjectCard(props) {
             </div>
           </Grid>
         </Grid>
-
-        <CardActions className={classes.buttons}>
-          {gitLink !== "" ? (
-            <Button variant="outlined">
-              <a href={gitLink} className={classes.buttonLink} target="blank">
-                GitHub
-              </a>
-            </Button>
-          ) : null}
-          {liveLink !== "" ? (
-            <Button variant="outlined">
-              <a href={liveLink} className={classes.buttonLink} target="blank">
-                Live Demo
-              </a>
-            </Button>
-          ) : null}
-        </CardActions>
       </CardContent>
     </Card>
   );
