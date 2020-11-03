@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "prismic-javascript": "^3.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-material-ui-carousel": "^1.8.2",

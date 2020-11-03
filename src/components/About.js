@@ -82,7 +82,11 @@ export default function About(props) {
             motorcycles and train in Olympic-style weightlifting.
           </Typography>
           <Typography variant="body2" className={classes.paragraph}>
-            I'm currently working on a freelance basis with several clients and constantly learning.
+            I'm currently working on a freelance basis with several clients and
+            constantly learning. Most recently, I delivered a site to a client
+            built with Next.js to optimise SEO opportunities. I deployed this on
+            AWS Cloudfront using the serverless framework. Have a look in the
+            projects section!
           </Typography>
           <Typography variant="body2" className={classes.paragraph}>
             If you're hiring and looking for a dedicated and driven junior

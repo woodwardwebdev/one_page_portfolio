@@ -28,14 +28,21 @@ import brochure2 from "../img/project_imgs/brochure/2.jpg";
 import brochure3 from "../img/project_imgs/brochure/3.jpg";
 import brochure4 from "../img/project_imgs/brochure/4.jpg";
 
+import fracas1 from "../img/project_imgs/fracas/1.png";
+import fracas2 from "../img/project_imgs/fracas/2.png";
+import fracas3 from "../img/project_imgs/fracas/3.png";
+import fracas4 from "../img/project_imgs/fracas/4.png";
+import fracas5 from "../img/project_imgs/fracas/5.png";
+
 const colorsImgs = [colors1, colors2, colors3, colors4];
 const discordImgs = [discord1];
 const mileageImgs = [mileage1, mileage2, mileage3];
 const moviesImgs = [movies1, movies2, movies3];
 const opinionratedImgs = [opinionrated1, opinionrated2];
 const shoppingImgs = [shopping1, shopping2, shopping3];
-const radaImgs = [rada1, rada2]
-const brochureImgs = [brochure1, brochure2, brochure3, brochure4]
+const radaImgs = [rada1, rada2];
+const brochureImgs = [brochure1, brochure2, brochure3, brochure4];
+const fracasImgs = [fracas1, fracas2, fracas3, fracas4, fracas5];
 
 export {
   colorsImgs,
@@ -45,5 +52,6 @@ export {
   opinionratedImgs,
   shoppingImgs,
   radaImgs,
-  brochureImgs
+  brochureImgs,
+  fracasImgs,
 };
