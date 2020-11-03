@@ -1,19 +1,36 @@
-import brochure from '../img/project_imgs/hero/brochure.png'
+import brochure from "../img/project_imgs/hero/brochure.png";
 import colors from "../img/project_imgs/hero/colors.png";
 import discord from "../img/project_imgs/hero/discord.png";
-import mileage from "../img/project_imgs/hero/mileage.png";
+import fracas from "../img/project_imgs/hero/fracas.png";
 import movies from "../img/project_imgs/hero/movies.png";
-import rada from '../img/project_imgs/hero/rada.png'
+import rada from "../img/project_imgs/hero/rada.png";
 import {
   colorsImgs,
   discordImgs,
-  mileageImgs,
+  fracasImgs,
   moviesImgs,
   radaImgs,
-  brochureImgs
+  brochureImgs,
 } from "../content/projectsImgs";
 
 const projectsData = [
+  {
+    img: fracas,
+    moreImgs: fracasImgs,
+    title: "Fracas Digital",
+    slug: "fracas",
+    author: "Colin Woodward",
+    cols: 1,
+    gitLink: "",
+    liveLink: "https://fracasdigital.co.uk/",
+    tech: ["React.js"],
+    descText:
+      "Built for a client, I designed, built and deployed this brochure site on AWS using the Next.js framework. The contact form uses Next.js api functions, which translates into AWS Lambda functions once deployed. I make use of the serverless framework to manage deployment.",
+    improvements: [
+      "We plan to add a CMS for user management (likely Prismic)",
+      "Additional features to be added via client",
+    ],
+  },
   {
     img: brochure,
     moreImgs: brochureImgs,
@@ -87,25 +104,6 @@ const projectsData = [
     ],
   },
   {
-    img: mileage,
-    moreImgs: mileageImgs,
-    title: "Mileage Tracker With Google API",
-    slug: "mileage_tracker",
-    author: "Colin Woodward",
-    cols: 1,
-    gitLink: "https://github.com/woodwardwebdev/travelapp",
-    liveLink: "",
-    tech: [],
-    descText:
-      "I built this app to experiment with Google's Directions API. The app lets you pre-define locations of travel and stores them in the database. You can then choose any two of them and the app will use the API to calculate the mileage of the trip and store that as a Journey in the database. I learned a lot about API useage and environment variables while building this.",
-    improvements: [
-      "Host app on permanent server",
-      "Create API to allow for a mobile app to push data to the server",
-      "Use Twilio or another messaging service to send a text to remind user to update their mileage daily/weekly",
-      "Look into integrating with a Calendar app to reference work days and remind or suggest mileage smartly",
-    ],
-  },
-  {
     img: movies,
     moreImgs: moviesImgs,
     title: "Movie Search using API",
@@ -123,7 +121,6 @@ const projectsData = [
       "Allow user to choose how many results are shown, rather than a hard coded ten",
     ],
   },
-
 ];
 
 export default projectsData;
